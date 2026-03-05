@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio de Unhas | Studio</title>
+    <title>Studio Roberta Nunes</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,10 +19,11 @@
   <body>
     <header class="topbar">
       <div class="container topbar-inner">
-        <div class="logo">Studio<span>Nails</span></div>
+        <div class="logo">Studio<span> Roberta Nunes</span></div>
         <nav class="nav">
           <a href="#portfolio">Portfólio</a>
           <a href="#about">Sobre</a>
+          <a href="#location">Como chegar</a>
           <a href="#booking" class="btn-nav">Agendar</a>
         </nav>
       </div>
@@ -67,65 +68,128 @@
 
       <section id="portfolio" class="portfolio">
         <div class="container section-header">
-          <h2>Portfólio</h2>
-          <p>Alguns dos modelos mais pedidos pelas clientes.</p>
+          <h2>Serviços</h2>
+          <p>Escolha o cuidado que combina com o seu momento.</p>
         </div>
 
         <div class="container filters">
-          <button class="filter-btn active" data-filter="all">Todas</button>
-          <button class="filter-btn" data-filter="gel">Unhas em gel</button>
-          <button class="filter-btn" data-filter="fibra">Fibra</button>
-          <button class="filter-btn" data-filter="francesinha">Francesinha</button>
-          <button class="filter-btn" data-filter="arte">Nail art</button>
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="unhas">Serviços de unhas</button>
+          <button class="filter-btn" data-filter="pes">Cuidados com os pés</button>
+          <button class="filter-btn" data-filter="bemestar">Massagens e bem-estar</button>
         </div>
 
         <div class="container grid">
           <!-- Imagens de exemplo com placeholders; troque pelos seus próprios -->
-          <div class="card" data-category="gel">
+          <div class="card" data-category="unhas">
             <div class="card-img img-1"></div>
             <div class="card-body">
-              <h3>Gel clássico nude</h3>
-              <p>Visual elegante e versátil para qualquer ocasião.</p>
+              <div class="card-body-header">
+                <h3>Manicure</h3>
+                <span class="card-price">R$ 40</span>
+              </div>
+              <p>
+                Limpeza, corte, lixamento e esmaltação com cuidado em cada detalhe para deixar suas mãos impecáveis no
+                dia a dia ou em ocasiões especiais.
+              </p>
             </div>
           </div>
 
-          <div class="card" data-category="fibra">
+          <div class="card" data-category="unhas">
             <div class="card-img img-2"></div>
             <div class="card-body">
-              <h3>Fibra alongada</h3>
-              <p>Alongamento delicado com acabamento natural.</p>
+              <div class="card-body-header">
+                <h3>Pedicure</h3>
+                <span class="card-price">R$ 45</span>
+              </div>
+              <p>
+                Cuidado completo para os pés, com remoção de cutículas, hidratação e esmaltação para você se sentir
+                confortável e confiante.
+              </p>
             </div>
           </div>
 
-          <div class="card" data-category="francesinha">
+          <div class="card" data-category="unhas">
             <div class="card-img img-3"></div>
             <div class="card-body">
-              <h3>Francesinha clássica</h3>
-              <p>O clássico que nunca sai de moda.</p>
+              <div class="card-body-header">
+                <h3>Blindagem de unhas</h3>
+                <span class="card-price">R$ 80</span>
+              </div>
+              <p>
+                Proteção extra sobre a unha natural para aumentar a resistência, reduzir quebras e prolongar a
+                durabilidade do esmalte.
+              </p>
             </div>
           </div>
 
-          <div class="card" data-category="arte">
+          <div class="card" data-category="unhas">
             <div class="card-img img-4"></div>
             <div class="card-body">
-              <h3>Nail art minimalista</h3>
-              <p>Detalhes delicados que fazem diferença.</p>
+              <div class="card-body-header">
+                <h3>Esmaltação em gel</h3>
+                <span class="card-price">R$ 70</span>
+              </div>
+              <p>
+                Esmaltação em gel com brilho intenso e longa duração, ideal para quem quer unhas bonitas por mais tempo
+                sem retoques frequentes.
+              </p>
             </div>
           </div>
 
-          <div class="card" data-category="arte">
+          <div class="card" data-category="pes">
             <div class="card-img img-5"></div>
             <div class="card-body">
-              <h3>Nail art colorida</h3>
-              <p>Perfeita para quem ama cores e criatividade.</p>
+              <div class="card-body-header">
+                <h3>Spa dos pés</h3>
+                <span class="card-price">R$ 90</span>
+              </div>
+              <p>
+                Ritual relaxante com esfoliação, hidratação profunda e cuidados especiais para deixar seus pés leves,
+                macios e renovados.
+              </p>
             </div>
           </div>
 
-          <div class="card" data-category="gel">
+          <div class="card" data-category="bemestar">
             <div class="card-img img-6"></div>
             <div class="card-body">
-              <h3>Gel vermelho intenso</h3>
-              <p>Para quem gosta de presença marcante.</p>
+              <div class="card-body-header">
+                <h3>Massagem relaxante</h3>
+                <span class="card-price">R$ 120</span>
+              </div>
+              <p>
+                Toques suaves e envolventes para aliviar o estresse do dia a dia, relaxar a musculatura e trazer
+                sensação de bem-estar imediato.
+              </p>
+            </div>
+          </div>
+
+          <div class="card" data-category="bemestar">
+            <div class="card-img img-7"></div>
+            <div class="card-body">
+              <div class="card-body-header">
+                <h3>Massagem detox com modeladora</h3>
+                <span class="card-price">R$ 150</span>
+              </div>
+              <p>
+                Massagem com foco em ativar a circulação, ajudar na eliminação de toxinas e modelar o contorno do corpo
+                com manobras firmes.
+              </p>
+            </div>
+          </div>
+
+          <div class="card" data-category="bemestar">
+            <div class="card-img img-8"></div>
+            <div class="card-body">
+              <div class="card-body-header">
+                <h3>Massagem linfática</h3>
+                <span class="card-price">R$ 140</span>
+              </div>
+              <p>
+                Técnica suave que estimula o sistema linfático, reduz inchaços e promove uma sensação de leveza
+                generalizada no corpo.
+              </p>
             </div>
           </div>
         </div>
@@ -156,7 +220,7 @@
       <section id="booking" class="booking">
         <div class="container booking-inner">
           <div class="booking-text">
-            <h2>Agende sua unha</h2>
+            <h2>Agende seu horário</h2>
             <p>Preencha os dados abaixo e envie direto para o WhatsApp. Eu retorno confirmando o melhor horário.</p>
             <div class="booking-highlight">
               <span>✔</span>
@@ -178,12 +242,20 @@
               <label for="service">Tipo de serviço</label>
               <select id="service" name="service" required>
                 <option value="">Selecione</option>
-                <option value="Alongamento em gel">Alongamento em gel</option>
-                <option value="Fibra de vidro">Fibra de vidro</option>
-                <option value="Manicure simples">Manicure simples</option>
-                <option value="Francesinha">Francesinha</option>
-                <option value="Nail art personalizada">Nail art personalizada</option>
-                <option value="Pé e mão">Pé e mão</option>
+                <optgroup label="Serviços de Unhas">
+                  <option value="Manicure">Manicure</option>
+                  <option value="Pedicure">Pedicure</option>
+                  <option value="Blindagem de unhas">Blindagem de unhas</option>
+                  <option value="Esmaltação em gel">Esmaltação em gel</option>
+                </optgroup>
+                <optgroup label="Cuidados com os pés">
+                  <option value="Spa dos pés">Spa dos pés</option>
+                </optgroup>
+                <optgroup label="Massagens e bem-estar">
+                  <option value="Massagem relaxante">Massagem relaxante</option>
+                  <option value="Massagem detox com modeladora">Massagem detox com modeladora</option>
+                  <option value="Massagem linfática">Massagem linfática</option>
+                </optgroup>
               </select>
             </div>
 
@@ -213,11 +285,33 @@
           </form>
         </div>
       </section>
+
+      <section id="location" class="location">
+        <div class="container location-inner">
+          <div class="location-text">
+            <h2>Como chegar</h2>
+            <p>Estamos no coração de Jacareí, em uma região de fácil acesso para você cuidar das suas unhas com calma.</p>
+            <div class="location-address">
+              <span class="location-label">Endereço</span>
+              <p>Rua Irmãos Cachute, 42 — Centro, Jacareí - SP</p>
+            </div>
+            <p class="location-hint">Use o mapa ao lado para traçar a rota até o studio pelo seu aplicativo favorito.</p>
+          </div>
+          <div class="location-map-wrapper">
+            <iframe
+              title="Mapa do Studio Roberta Nunes"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Rua%20Irm%C3%A3os%20Cachute%2042%2C%20Centro%2C%20Jacare%C3%AD&output=embed"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Studio Nails — Todos os direitos reservados.</p>
+        <p>© <span id="year"></span> Studio Roberta Nunes — Todos os direitos reservados.</p>
         <p class="footer-credit">Desenvolvido com carinho para realçar a sua beleza.</p>
       </div>
     </footer>
