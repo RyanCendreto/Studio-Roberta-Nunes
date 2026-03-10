@@ -471,6 +471,14 @@ img {
   aspect-ratio: 4 / 3;
   background-size: cover;
   background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: opacity var(--transition-med), transform var(--transition-med);
+}
+
+.card-img.is-changing {
+  opacity: 0;
+  transform: scale(0.97);
 }
 
 .img-1 {
@@ -503,6 +511,45 @@ img {
 
 .img-8 {
   background-image: url('https://images.pexels.com/photos/3738355/pexels-photo-3738355.jpeg?auto=compress&cs=tinysrgb&w=800');
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.gallery-arrow-prev {
+  left: 8px;
+}
+
+.gallery-arrow-next {
+  right: 8px;
+}
+
+.gallery-arrow::before {
+  content: '‹';
+  font-size: 14px;
+}
+
+.gallery-arrow-next::before {
+  content: '›';
+}
+
+.card-img:hover .gallery-arrow {
+  opacity: 1;
 }
 
 .card-body {

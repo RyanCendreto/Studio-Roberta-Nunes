@@ -152,14 +152,13 @@ function initServiceGalleries() {
       const current = Number(card.dataset.galleryIndex || "0");
       const total = images.length;
       const nextIndex = (current + direction + total) % total;
-
       imgDiv.classList.add("is-changing");
 
       setTimeout(() => {
         card.dataset.galleryIndex = String(nextIndex);
         imgDiv.style.backgroundImage = `url('${images[nextIndex]}')`;
         imgDiv.classList.remove("is-changing");
-      }, 160);
+      }, 180);
     };
 
     if (prev) {
