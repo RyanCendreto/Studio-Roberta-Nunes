@@ -20,7 +20,10 @@
   <body>
     <header class="topbar">
       <div class="container topbar-inner">
-        <div class="logo">Studio<span> Roberta Nunes</span></div>
+        <div class="logo">
+          <img src="logo.png" alt="Studio Roberta Nunes" class="logo-mark" />
+          <span class="logo-text">Studio <span>Roberta Nunes</span></span>
+        </div>
         <nav class="nav">
           <a href="#portfolio">Portfólio</a>
           <a href="#about">Sobre</a>
@@ -82,8 +85,11 @@
 
         <div class="container grid">
           <!-- Imagens de exemplo com placeholders; troque pelos seus próprios -->
-          <div class="card" data-category="unhas">
-            <div class="card-img img-1"></div>
+          <div class="card" data-category="unhas" data-gallery="manicure">
+            <div class="card-img img-1">
+              <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Ver imagem anterior"></button>
+              <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Ver próxima imagem"></button>
+            </div>
             <div class="card-body">
               <div class="card-body-header">
                 <h3>Manicure</h3>
@@ -96,8 +102,11 @@
             </div>
           </div>
 
-          <div class="card" data-category="unhas">
-            <div class="card-img img-2"></div>
+          <div class="card" data-category="unhas" data-gallery="pedicure">
+            <div class="card-img img-2">
+              <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Ver imagem anterior"></button>
+              <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Ver próxima imagem"></button>
+            </div>
             <div class="card-body">
               <div class="card-body-header">
                 <h3>Pedicure</h3>
@@ -110,8 +119,11 @@
             </div>
           </div>
 
-          <div class="card" data-category="unhas">
-            <div class="card-img img-3"></div>
+          <div class="card" data-category="unhas" data-gallery="blindagem">
+            <div class="card-img img-3">
+              <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Ver imagem anterior"></button>
+              <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Ver próxima imagem"></button>
+            </div>
             <div class="card-body">
               <div class="card-body-header">
                 <h3>Blindagem de unhas</h3>
@@ -124,8 +136,11 @@
             </div>
           </div>
 
-          <div class="card" data-category="unhas">
-            <div class="card-img img-4"></div>
+          <div class="card" data-category="unhas" data-gallery="gel">
+            <div class="card-img img-4">
+              <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Ver imagem anterior"></button>
+              <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Ver próxima imagem"></button>
+            </div>
             <div class="card-body">
               <div class="card-body-header">
                 <h3>Esmaltação em gel</h3>
@@ -138,8 +153,11 @@
             </div>
           </div>
 
-          <div class="card" data-category="pes">
-            <div class="card-img img-5"></div>
+          <div class="card" data-category="pes" data-gallery="spa">
+            <div class="card-img img-5">
+              <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Ver imagem anterior"></button>
+              <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Ver próxima imagem"></button>
+            </div>
             <div class="card-body">
               <div class="card-body-header">
                 <h3>Spa dos pés</h3>
@@ -152,8 +170,11 @@
             </div>
           </div>
 
-          <div class="card" data-category="bemestar">
-            <div class="card-img img-6"></div>
+          <div class="card" data-category="bemestar" data-gallery="relaxante">
+            <div class="card-img img-6">
+              <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Ver imagem anterior"></button>
+              <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Ver próxima imagem"></button>
+            </div>
             <div class="card-body">
               <div class="card-body-header">
                 <h3>Massagem relaxante</h3>
@@ -166,8 +187,11 @@
             </div>
           </div>
 
-          <div class="card" data-category="bemestar">
-            <div class="card-img img-7"></div>
+          <div class="card" data-category="bemestar" data-gallery="detox">
+            <div class="card-img img-7">
+              <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Ver imagem anterior"></button>
+              <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Ver próxima imagem"></button>
+            </div>
             <div class="card-body">
               <div class="card-body-header">
                 <h3>Massagem detox com modeladora</h3>
@@ -180,8 +204,11 @@
             </div>
           </div>
 
-          <div class="card" data-category="bemestar">
-            <div class="card-img img-8"></div>
+          <div class="card" data-category="bemestar" data-gallery="linfatica">
+            <div class="card-img img-8">
+              <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Ver imagem anterior"></button>
+              <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Ver próxima imagem"></button>
+            </div>
             <div class="card-body">
               <div class="card-body-header">
                 <h3>Massagem linfática</h3>
@@ -312,6 +339,10 @@
 
     <footer class="footer">
       <div class="container footer-inner">
+        <div class="footer-hours">
+          <span class="footer-hours-label">Horário de funcionamento</span>
+          <p>Defina aqui o seu horário de funcionamento.</p>
+        </div>
         <p>© <span id="year"></span> Studio Roberta Nunes — Todos os direitos reservados.</p>
         <p class="footer-credit">Desenvolvido com carinho para realçar a sua beleza.</p>
       </div>

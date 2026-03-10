@@ -2,6 +2,41 @@
 // Exemplo Brasil (DDD 11): 55 + 11 + número -> "5511999999999"
 const WHATSAPP_NUMBER = "5512992100548";
 
+const SERVICE_GALLERIES = {
+  manicure: [
+    "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3738343/pexels-photo-3738343.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+  pedicure: [
+    "https://images.pexels.com/photos/3738341/pexels-photo-3738341.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3738346/pexels-photo-3738346.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+  blindagem: [
+    "https://images.pexels.com/photos/3738349/pexels-photo-3738349.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+  gel: [
+    "https://images.pexels.com/photos/3738345/pexels-photo-3738345.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3738343/pexels-photo-3738343.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+  spa: [
+    "https://images.pexels.com/photos/3738346/pexels-photo-3738346.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3738362/pexels-photo-3738362.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+  relaxante: [
+    "https://images.pexels.com/photos/3738349/pexels-photo-3738349.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3738355/pexels-photo-3738355.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+  detox: [
+    "https://images.pexels.com/photos/3738362/pexels-photo-3738362.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3738341/pexels-photo-3738341.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+  linfatica: [
+    "https://images.pexels.com/photos/3738355/pexels-photo-3738355.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3738346/pexels-photo-3738346.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+};
+
 function buildWhatsappUrl(message) {
   const encoded = encodeURIComponent(message);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
@@ -98,6 +133,62 @@ function setMinBookingDate() {
   dateInput.min = `${year}-${month}-${day}`;
 }
 
+function initServiceGalleries() {
+  const cards = document.querySelectorAll(".card[data-gallery]");
+
+  cards.forEach((card) => {
+    const key = card.getAttribute("data-gallery");
+    const images = SERVICE_GALLERIES[key];
+    const imgDiv = card.querySelector(".card-img");
+    const prev = card.querySelector(".gallery-arrow-prev");
+    const next = card.querySelector(".gallery-arrow-next");
+
+    if (!images || images.length === 0 || !imgDiv) return;
+
+    card.dataset.galleryIndex = "0";
+    imgDiv.style.backgroundImage = `url('${images[0]}')`;
+
+    const changeImage = (direction) => {
+      const current = Number(card.dataset.galleryIndex || "0");
+      const total = images.length;
+      const nextIndex = (current + direction + total) % total;
+
+      imgDiv.classList.add("is-changing");
+
+      setTimeout(() => {
+        card.dataset.galleryIndex = String(nextIndex);
+        imgDiv.style.backgroundImage = `url('${images[nextIndex]}')`;
+        imgDiv.classList.remove("is-changing");
+      }, 160);
+    };
+
+    if (prev) {
+      prev.addEventListener("click", (event) => {
+        event.stopPropagation();
+        changeImage(-1);
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", (event) => {
+        event.stopPropagation();
+        changeImage(1);
+      });
+    }
+  });
+}
+
+function initLogoMark() {
+  const logo = document.querySelector(".logo");
+  const img = document.querySelector(".logo-mark");
+
+  if (!logo || !img) return;
+
+  img.addEventListener("load", () => {
+    logo.classList.add("has-image");
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.getElementById("booking-form");
   const heroBtn = document.getElementById("hero-whatsapp-btn");
@@ -118,5 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFilters();
   setCurrentYear();
   setMinBookingDate();
+  initServiceGalleries();
+  initLogoMark();
 });
 

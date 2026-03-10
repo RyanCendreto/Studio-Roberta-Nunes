@@ -1,5 +1,6 @@
 :root {
-  --bg: #F4F2F8;
+  /* Paleta fixa em modo escuro */
+  --bg: #070509;
   --bg-alt: #120e17;
   --accent: #f18ca8;
   --accent-soft: rgba(241, 140, 168, 0.12);
@@ -9,6 +10,8 @@
   --border-subtle: rgba(255, 255, 255, 0.06);
   --card-bg: rgba(12, 8, 18, 0.9);
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+  --bg-gradient: radial-gradient(circle at top, #22132d 0, #070509 40%, #050307 100%);
+
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-pill: 999px;
@@ -27,7 +30,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #22132d 0, #070509 40%, #050307 100%);
+  background: var(--bg-gradient);
   color: var(--text);
   scroll-behavior: smooth;
 }
@@ -67,14 +70,33 @@ img {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-text {
   font-family: 'Playfair Display', 'Times New Roman', serif;
   font-size: 1.4rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.logo span {
+.logo-text span {
   color: var(--accent);
+}
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: none;
+  border: 1px solid var(--border-subtle);
+}
+
+.logo.has-image .logo-mark {
+  display: block;
 }
 
 .nav {
@@ -413,6 +435,9 @@ img {
   aspect-ratio: 4 / 3;
   background-size: cover;
   background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: opacity var(--transition-med), transform var(--transition-med);
 }
 
 .img-1 {
@@ -474,6 +499,50 @@ img {
   margin: 0;
   font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.gallery-arrow-prev {
+  left: 8px;
+}
+
+.gallery-arrow-next {
+  right: 8px;
+}
+
+.gallery-arrow::before {
+  content: '‹';
+  font-size: 14px;
+}
+
+.gallery-arrow-next::before {
+  content: '›';
+}
+
+.card-img:hover .gallery-arrow {
+  opacity: 1;
+}
+
+.card-img.is-changing {
+  opacity: 0;
+  transform: scale(0.97);
 }
 
 /* About */
@@ -794,6 +863,21 @@ textarea:focus {
 
 .footer-credit {
   font-size: 0.78rem;
+}
+
+.footer-hours {
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-hours-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-strong);
+  margin-bottom: 2px;
 }
 
 /* Floating WhatsApp button */
